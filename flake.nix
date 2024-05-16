@@ -2,7 +2,7 @@
   description = "NixOS System Configuration";
 
   inputs = {
-    # NixOS official package source, using the nixos-23.11 branch here
+    # NixOS official package source, using the unstable branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # home-manager, used for managing user configuration
