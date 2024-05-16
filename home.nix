@@ -58,7 +58,18 @@
 
   programs.neovim.enable = true;
   
-    
+  programs.git = {
+    enable = true;
+    userName = "StackDoubleFlow";
+    userEmail = "ojaslandge@gmail.com";
+    aliases = {
+      rc = "rebase --continue";
+    };
+    extraConfig = {
+      pull.ff = "only";
+      core.editor = "vim";
+    };
+  };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

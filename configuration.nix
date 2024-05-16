@@ -97,7 +97,6 @@
     breeze-icons
     btop
     spotify
-    git
     baobab
     pavucontrol
     gimp
