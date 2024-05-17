@@ -221,6 +221,11 @@
 
   programs.adb.enable = true;
 
+
   virtualisation.docker.enable = true;
+
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
 }
 
