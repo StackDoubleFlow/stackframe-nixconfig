@@ -10,6 +10,8 @@
       ./hardware-configuration.nix
     ];
 
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
   # Use the GRUB EFI boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
