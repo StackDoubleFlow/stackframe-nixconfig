@@ -88,8 +88,8 @@
         llvm-vs-code-extensions.vscode-clangd
         vadimcn.vscode-lldb
         rust-lang.rust-analyzer
-        arrterian.nix-env-selector
         ms-vscode-remote.remote-ssh
+        mkhl.direnv
       ];
     })
     usbutils # lsusb
