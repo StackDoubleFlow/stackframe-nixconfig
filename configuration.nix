@@ -132,6 +132,7 @@
     unzip
     jdk17
     jdk22
+    cryfs
 
     # Dev Libraries
     wayland
@@ -222,7 +223,6 @@
   services.tailscale.useRoutingFeatures = "client";
 
   programs.adb.enable = true;
-
 
   virtualisation.docker.enable = true;
 
