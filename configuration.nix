@@ -133,6 +133,7 @@
     jdk17
     jdk22
     cryfs
+    dotnetCorePackages.sdk_9_0
 
     # Dev Libraries
     wayland
