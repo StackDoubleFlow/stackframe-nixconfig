@@ -201,6 +201,9 @@
   services.power-profiles-daemon.enable = true;
   services.fprintd.enable = true;
   security.pam.services.login.fprintAuth = true;
+  services.logind.extraConfig = ''
+    HandlePowerKey=suspend
+  '';
 
   security.rtkit.enable = true;
   services.pipewire = {
