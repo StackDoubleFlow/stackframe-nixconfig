@@ -72,7 +72,7 @@
     alacritty
     prismlauncher
     discord
-    wmenu # wayland dmenu alternative
+    bemenu # wayland dmenu alternative
     grim # screenshot utility
     slurp # wayland screen region selector (for screenshots)
     wl-clipboard
