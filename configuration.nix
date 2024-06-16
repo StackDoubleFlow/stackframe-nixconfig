@@ -93,6 +93,7 @@
         ms-vscode-remote.remote-ssh
         mkhl.direnv
         bbenoist.nix
+        eamodio.gitlens
       ];
     })
     usbutils # lsusb
