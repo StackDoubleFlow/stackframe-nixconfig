@@ -134,6 +134,7 @@
     jdk22
     cryfs
     dotnetCorePackages.sdk_9_0
+    signal-desktop
 
     # Dev Libraries
     wayland
