@@ -92,6 +92,7 @@
         rust-lang.rust-analyzer
         ms-vscode-remote.remote-ssh
         mkhl.direnv
+        bbenoist.nix
       ];
     })
     usbutils # lsusb
