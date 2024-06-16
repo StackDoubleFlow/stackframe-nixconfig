@@ -201,6 +201,7 @@
   services.power-profiles-daemon.enable = true;
   services.fprintd.enable = true;
   security.pam.services.login.fprintAuth = true;
+  security.pam.services.login.enableGnomeKeyring = true;
   services.logind.extraConfig = ''
     HandlePowerKey=suspend
   '';
