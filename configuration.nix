@@ -28,6 +28,8 @@
     options cfg80211 ieee80211_regdom="US"
   '';
 
+  hardware.bluetooth.enable = true;
+
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
@@ -135,6 +137,7 @@
     cryfs
     dotnetCorePackages.sdk_9_0
     signal-desktop
+    blueberry
 
     # Dev Libraries
     wayland
