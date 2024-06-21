@@ -98,6 +98,7 @@
     })
     usbutils # lsusb
     pciutils # lspci
+    killall
     file
     dolphin
     breeze-icons
