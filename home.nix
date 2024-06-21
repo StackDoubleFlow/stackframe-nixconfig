@@ -165,7 +165,9 @@
         {
           # Wayland overlay bar for sound and brightness level
           command = "mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob";
-          always = true;
+        }
+        {
+          command = "exec fcitx5";
         }
       ];
     };
