@@ -192,10 +192,9 @@
   # Will be exposed through DBus to programs willing to store secrets.
   services.gnome.gnome-keyring.enable = true;
 
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
+  # For home-manager sway
+  security.polkit.enable = true;
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   # For gnome configuration
   programs.dconf.enable = true;

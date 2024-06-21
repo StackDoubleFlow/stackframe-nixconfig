@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home.username = "stack";
@@ -8,7 +8,7 @@
     enable = true;
     loginShellInit = ''
       if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        exec ~/scripts/sway.sh
+        exec sway
       end
     '';
   };
@@ -35,9 +35,10 @@
     platformTheme.name = "adwaita";
     style.name = "adwaita-dark";
     # TODO: Fix qt kde settings
-    # This fixes Dolphin's folder view background
+    # This should fix Dolphin's folder view background,
+    # but it doesn't look like kdeglobals gets generated.
+    # I made the file manuaally for now: ~/.config/kdeglobals
     # kde.settings.kdeglobals.Colors.BackgroundNormal = "#2E2E2E";
-    # kde.settings.powermanagementprofilesrc.AC.HandleButtonEvents.lidAction = 32;
   };
 
   home.pointerCursor = {
@@ -74,6 +75,99 @@
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+  };
+
+  services.kanshi = {
+    enable = true;
+    settings = [
+      {
+        profile.name = "default";
+        profile.outputs = [
+          {
+            criteria = "eDP-1";
+            scale = 1.5;
+          }
+        ];
+      }
+      {
+        profile.name = "left_monitor";
+        profile.outputs = [
+          {
+            criteria = "eDP-1";
+            scale = 1.5;
+            position = "1920,0";
+          }
+          {
+            criteria = "AOC 2279WH AHXH79A000647";
+            position = "0,0";
+          }
+        ];
+      }
+    ];
+  };
+
+  wayland.windowManager.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    extraSessionCommands = ''
+      export _JAVA_AWT_WM_NONREPARENTING=1
+      export QT_QPA_PLATFORM=wayland
+      export XDG_SESSION_DESKTOP=sway
+    '';
+    config = {
+      # Logo key.
+      modifier = "Mod4";
+      terminal = "alacritty";
+      menu = "bemenu-run --binding vim --vim-esc-exits -c -l \"10 down\" -W 0.5";
+      window.border = 0;
+      output."eDP-1".scale = "1.5";
+      bars = [{
+        position = "top";
+        statusCommand = "while ~/scripts/sway_bar.sh; do sleep 1; done";
+        colors = {
+          statusline = "#ffffff";
+          background = "#323232";
+          inactiveWorkspace = {
+            border = "#32323200";
+            background = "#32323200";
+            text = "#5c5c5c";
+          };
+        };
+      }];
+      keybindings = lib.mkOptionDefault {
+        # Volume control
+        "XF86AudioLowerVolume" = "exec pamixer -d 5 && pamixer --get-volume > $SWAYSOCK.wob";
+        "XF86AudioRaiseVolume" = "exec pamixer -i 5 && pamixer --get-volume > $SWAYSOCK.wob";
+        "XF86AudioMute" = "exec pamixer --toggle-mute";
+        # Media control
+        "XF86AudioPlay" = "exec playerctl play-pause";
+        "XF86AudioNext" = "exec playerctl next";
+        "XF86AudioPrev" = "exec playerctl previous";
+        # Brightness control
+        "XF86MonBrightnessUp" = "exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob";
+        "XF86MonBrightnessDown" = "exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob";
+        # Framework button
+        "XF86AudioMedia" = "exec osu!";
+        # Screenshots
+        "print" = "exec grim -g \"$(slurp)\" - | wl-copy --type image/png";
+      };
+      input = {
+        "2362:628:PIXA3854:00_093A:0274_Touchpad" = {
+          "click_method" = "clickfinger";
+        };
+        "1133:16465:Logitech_M510" = {
+          "accel_profile" =  "flat";
+          "pointer_accel" = "-0.2";
+        };
+      };
+      startup = [
+        {
+          # Wayland overlay bar for sound and brightness level
+          command = "exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob";
+          always = true;
+        }
+      ];
+    };
   };
 
   # This value determines the home Manager release that your
