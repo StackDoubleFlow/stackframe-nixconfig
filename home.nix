@@ -163,7 +163,7 @@
       startup = [
         {
           # Wayland overlay bar for sound and brightness level
-          command = "exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob";
+          command = "mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob";
           always = true;
         }
       ];
