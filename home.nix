@@ -114,7 +114,7 @@
       export QT_QPA_PLATFORM=wayland
       export XDG_SESSION_DESKTOP=sway
     '';
-    config = {
+    config = rec {
       # Logo key.
       modifier = "Mod4";
       terminal = "alacritty";
@@ -146,8 +146,9 @@
         # Brightness control
         "XF86MonBrightnessUp" = "exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob";
         "XF86MonBrightnessDown" = "exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob";
-        # Framework button
+        # Application shortcuts
         "XF86AudioMedia" = "exec osu!";
+        "${modifier}+Shift+m" = "exec prismlauncher -l 1.20.4";
         # Screenshots
         "print" = "exec grim -g \"$(slurp)\" - | wl-copy --type image/png";
       };
