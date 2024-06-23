@@ -227,8 +227,7 @@
   programs.steam.enable = true;
 
   boot.initrd.kernelModules = [ "amdgpu" ];
-  hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true;
+  hardware.graphics.enable32Bit = true;
 
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
