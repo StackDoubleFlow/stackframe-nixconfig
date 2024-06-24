@@ -124,7 +124,6 @@
     xorg.xeyes
     gnome.adwaita-icon-theme
     just
-    unityhub
     libreoffice-qt
     hunspell # Spell-checker (used by libreoffice)
     # darling # MacOS Wine-like emulator 
@@ -141,6 +140,7 @@
     dotnetCorePackages.sdk_9_0
     signal-desktop
     blueberry
+    obs-studio
 
     # Dev Libraries
     wayland
@@ -192,6 +192,16 @@
   # Enable the gnome-keyring secrets vault. 
   # Will be exposed through DBus to programs willing to store secrets.
   services.gnome.gnome-keyring.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gtk
+    ];
+    config.common.default = "*";
+    wlr.enable = true;
+  };
 
   # For home-manager sway
   security.polkit.enable = true;
