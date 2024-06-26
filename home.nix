@@ -100,6 +100,7 @@
           {
             criteria = "AOC 2279WH AHXH79A000647";
             position = "0,0";
+            mode = "1920x1080@60Hz";
           }
         ];
       }
