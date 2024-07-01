@@ -141,6 +141,7 @@
     signal-desktop
     blueberry
     obs-studio
+    graphviz
 
     # Dev Libraries
     wayland
