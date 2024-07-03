@@ -90,17 +90,17 @@
         ];
       }
       {
-        profile.name = "left_monitor";
+        profile.name = "right_monitor";
         profile.outputs = [
           {
             criteria = "eDP-1";
             scale = 1.5;
-            position = "1920,0";
+            position = "0,0";
           }
           {
             criteria = "AOC 2279WH AHXH79A000647";
-            position = "0,0";
             mode = "1920x1080@60Hz";
+            position = "1504,0";
           }
         ];
       }
