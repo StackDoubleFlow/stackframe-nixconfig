@@ -142,6 +142,7 @@
     blueberry
     obs-studio
     graphviz
+    via
 
     # Dev Libraries
     wayland
@@ -246,6 +247,9 @@
   programs.adb.enable = true;
 
   virtualisation.docker.enable = true;
+
+  hardware.keyboard.qmk.enable = true;
+  services.udev.packages = [ pkgs.via ];
 
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=10s
