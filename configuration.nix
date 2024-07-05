@@ -71,7 +71,6 @@
       # commandLineArgs = "--gtk-version=4 --ozone-platform=wayland";
     })
     firefox
-    alacritty
     prismlauncher
     discord
     bemenu # wayland dmenu alternative
@@ -151,8 +150,7 @@
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
-    fira-code
-    fira-code-symbols
+    fira-code-nerdfont
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
