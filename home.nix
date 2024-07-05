@@ -162,6 +162,9 @@
           "accel_profile" =  "flat";
           "pointer_accel" = "-0.2";
         };
+        "1133:49291:Logitech_G502_HERO_Gaming_Mouse" = {
+          "pointer_accel" = "-0.5";
+        };
       };
       startup = [
         {
