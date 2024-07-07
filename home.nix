@@ -22,6 +22,10 @@
         };
       }
     ];
+    shellAliases = {
+      c = "code . && exit";
+      ll = "ls -Alh";
+    };
   };
 
   programs.alacritty = {
