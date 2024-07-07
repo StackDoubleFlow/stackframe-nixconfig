@@ -141,7 +141,9 @@
     blueberry
     obs-studio
     graphviz
+    gephi
     via
+    quickemu
 
     # Dev Libraries
     wayland
