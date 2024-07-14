@@ -111,6 +111,7 @@
     clang
     clang-tools
     llvmPackages_latest.llvm
+    lld
     ninja
     gnumake
     ghidra
@@ -144,6 +145,7 @@
     gephi
     via
     quickemu
+    jetbrains.idea-community
 
     # Dev Libraries
     wayland
@@ -243,6 +245,8 @@
 
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
+
+  services.flatpak.enable = true;
 
   programs.adb.enable = true;
 
