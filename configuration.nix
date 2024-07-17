@@ -73,6 +73,7 @@
     firefox
     prismlauncher
     discord
+    vesktop
     bemenu # wayland dmenu alternative
     grim # screenshot utility
     slurp # wayland screen region selector (for screenshots)
