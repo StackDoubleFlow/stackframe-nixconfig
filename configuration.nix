@@ -112,7 +112,6 @@
     clang
     clang-tools
     llvmPackages_latest.llvm
-    lld
     ninja
     gnumake
     ghidra
@@ -123,7 +122,6 @@
     wget
     glfw-wayland
     xorg.xeyes
-    gnome.adwaita-icon-theme
     just
     libreoffice-qt
     hunspell # Spell-checker (used by libreoffice)
