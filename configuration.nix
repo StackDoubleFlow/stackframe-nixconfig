@@ -238,6 +238,11 @@
 
   nixpkgs.config.allowUnfree = true;
   programs.steam.enable = true;
+  programs.steam.package = pkgs.steam.override {
+    extraPkgs = pkgs: with pkgs; [
+      libxkbcommon wayland
+    ];
+  };
 
   boot.initrd.kernelModules = [ "amdgpu" ];
   hardware.graphics.enable32Bit = true;
