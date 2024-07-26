@@ -98,6 +98,7 @@
     })
     usbutils # lsusb
     pciutils # lspci
+    fw-ectool
     killall
     file
     dolphin
