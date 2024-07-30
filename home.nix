@@ -150,16 +150,7 @@
       defaultWorkspace = "workspace number 1";
       bars = [{
         position = "top";
-        statusCommand = "while ~/scripts/sway_bar.sh; do sleep 1; done";
-        colors = {
-          statusline = "#ffffff";
-          background = "#323232";
-          inactiveWorkspace = {
-            border = "#32323200";
-            background = "#32323200";
-            text = "#5c5c5c";
-          };
-        };
+        command = "${pkgs.waybar}/bin/waybar";
       }];
       keybindings = lib.mkOptionDefault {
         # Volume control
