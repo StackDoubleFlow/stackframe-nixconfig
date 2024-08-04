@@ -14,9 +14,12 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # For hardware quirks
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, nixos-hardware, ... }@inputs: {
     nixosConfigurations.stackframe = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -33,6 +36,8 @@
 
           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
         }
+
+        nixos-hardware.nixosModules.framework-13-7040-amd
       ];
     };
   };

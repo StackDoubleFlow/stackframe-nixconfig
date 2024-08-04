@@ -23,12 +23,14 @@
   networking.hostName = "stackframe";
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.backend = "iwd";
+  systemd.services.NetworkManager-wait-online.enable = false;
   hardware.wirelessRegulatoryDatabase = true;
   boot.extraModprobeConfig = ''
     options cfg80211 ieee80211_regdom="US"
   '';
 
   hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = false;
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
@@ -250,6 +252,8 @@
 
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
+  # I don't want it running by default
+  systemd.services.tailscaled.enable = false;
 
   services.flatpak.enable = true;
 

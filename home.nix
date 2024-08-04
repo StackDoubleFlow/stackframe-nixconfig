@@ -149,7 +149,6 @@
       output."eDP-1".scale = "1.5";
       defaultWorkspace = "workspace number 1";
       bars = [{
-        position = "top";
         command = "${pkgs.waybar}/bin/waybar";
       }];
       keybindings = lib.mkOptionDefault {
