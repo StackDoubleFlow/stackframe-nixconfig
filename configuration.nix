@@ -239,7 +239,10 @@
 
   programs.fish.enable = true;
 
+  # Enable binary blobs
   nixpkgs.config.allowUnfree = true;
+  hardware.enableAllFirmware = true;
+
   programs.steam.enable = true;
   programs.steam.package = pkgs.steam.override {
     extraPkgs = pkgs: with pkgs; [
