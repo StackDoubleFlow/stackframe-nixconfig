@@ -1,43 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.username = "stack";
-  home.homeDirectory = "/home/stack";
-
-  programs.fish = {
-    enable = true;
-    loginShellInit = ''
-      if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        exec sway
-      end
-    '';
-    plugins = [
-      {
-        name = "tide";
-        src = pkgs.fetchFromGitHub {
-          owner = "IlanCosman";
-          repo = "tide";
-          rev = "44c521ab292f0eb659a9e2e1b6f83f5f0595fcbd";
-          sha256 = "sha256-85iU1QzcZmZYGhK30/ZaKwJNLTsx+j3w6St8bFiQWxc=";
-        };
-      }
-    ];
-    shellAliases = {
-      c = "code . && exit";
-      ll = "ls -Alh";
-    };
-  };
-
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      font.normal = {
-        family = "FiraCode Nerd Font";
-        style = "Regular";
-      };
-    };
-  };
-  
   dconf = {
     enable = true;
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
@@ -72,64 +35,6 @@
     package = pkgs.adwaita-icon-theme;
     name = "Adwaita";
     size = 32;
-  };
-
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-        fcitx5-gtk
-        fcitx5-chinese-addons
-    ];
-  };
-
-  programs.neovim.enable = true;
-  
-  programs.git = {
-    enable = true;
-    userName = "StackDoubleFlow";
-    userEmail = "ojaslandge@gmail.com";
-    aliases = {
-      rc = "rebase --continue";
-    };
-    extraConfig = {
-      pull.ff = "only";
-      core.editor = "vim";
-    };
-  };
-
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-
-  services.kanshi = {
-    enable = true;
-    settings = [
-      {
-        profile.name = "default";
-        profile.outputs = [
-          {
-            criteria = "eDP-1";
-            scale = 1.5;
-          }
-        ];
-      }
-      {
-        profile.name = "right_monitor";
-        profile.outputs = [
-          {
-            criteria = "eDP-1";
-            scale = 1.5;
-            position = "0,0";
-          }
-          {
-            criteria = "AOC 2279WH AHXH79A000647";
-            mode = "1920x1080@60Hz";
-            position = "1504,0";
-          }
-        ];
-      }
-    ];
   };
 
   wayland.windowManager.sway = {
@@ -193,17 +98,38 @@
     };
   };
 
-  # This value determines the home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update home Manager without changing this value. See
-  # the home Manager release notes for a list of state version
-  # changes in each release.
-  home.stateVersion = "24.05";
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 
-  # Let home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  services.kanshi = {
+    enable = true;
+    settings = [
+      {
+        profile.name = "default";
+        profile.outputs = [
+          {
+            criteria = "eDP-1";
+            scale = 1.5;
+          }
+        ];
+      }
+      {
+        profile.name = "right_monitor";
+        profile.outputs = [
+          {
+            criteria = "eDP-1";
+            scale = 1.5;
+            position = "0,0";
+          }
+          {
+            criteria = "AOC 2279WH AHXH79A000647";
+            mode = "1920x1080@60Hz";
+            position = "1504,0";
+          }
+        ];
+      }
+    ];
+  };
 }
-
