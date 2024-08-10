@@ -85,12 +85,6 @@
     unzip
     cryfs
   ];
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    fira-code-nerdfont
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

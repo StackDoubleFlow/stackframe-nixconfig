@@ -11,7 +11,14 @@
     wob # wayland overlay bar
 
     xorg.xeyes # Used to check if apps are running in Wayland
+
+    # Fonts
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    fira-code-nerdfont
   ];
+  fonts.fontconfig.enable = true;
 
   dconf = {
     enable = true;
