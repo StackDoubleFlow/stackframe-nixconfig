@@ -2,6 +2,74 @@
 { config, pkgs, lib, ... }:
 
 {
+  home.packages = with pkgs; [
+    (google-chrome.override {
+      # GTK4 is needed for fcitx popups to show
+      # There is currently a bug in google-chrome (but not chromium) where we need to manually specify wayland otherwise we get a white screen
+      # commandLineArgs = "--gtk-version=4 --ozone-platform=wayland";
+    })
+
+    # Games
+    (prismlauncher.override {
+      jdks = [ jdk17 jdk21 ];
+    })
+    osu-lazer-bin
+
+    # Social
+    vesktop
+    signal-desktop
+
+    # IDEs and other visual dev tools
+    (vscode-with-extensions.override {
+      vscodeExtensions = with vscode-extensions; [
+        rust-lang.rust-analyzer
+        vscodevim.vim
+        serayuzgur.crates
+        tamasfe.even-better-toml
+        llvm-vs-code-extensions.vscode-clangd
+        vadimcn.vscode-lldb
+        rust-lang.rust-analyzer
+        ms-vscode-remote.remote-ssh
+        mkhl.direnv
+        bbenoist.nix
+        eamodio.gitlens
+      ];
+    })
+    jetbrains.idea-community
+    ghidra
+    graphviz
+
+    # Dev tooling
+    python3
+    clang
+    clang-tools
+    llvmPackages_latest.llvm
+    ninja
+    gnumake
+
+    # Dev Libraries
+    glfw-wayland
+    dotnetCorePackages.sdk_9_0
+    wayland
+
+    # TODO: Sort through these
+    spotify
+    obs-studio
+    audacity
+    gimp
+    dolphin
+    obsidian
+    gephi
+    via # Keyboard config editor
+    quickemu
+    baobab
+    pavucontrol # TODO: audio module
+    blueberry
+
+    libreoffice-qt
+    hunspell # Spell-checker (used by libreoffice)
+  ];
+
   programs.fish = {
     enable = true;
     loginShellInit = ''

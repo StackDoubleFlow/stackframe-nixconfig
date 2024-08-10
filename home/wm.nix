@@ -1,6 +1,18 @@
 { config, pkgs, lib, ... }:
 
 {
+  home.packages = with pkgs; [
+    bemenu # wayland dmenu alternative
+    grim # screenshot utility
+    slurp # wayland screen region selector (for screenshots)
+    wl-clipboard
+    playerctl
+    pamixer
+    wob # wayland overlay bar
+
+    xorg.xeyes # Used to check if apps are running in Wayland
+  ];
+
   dconf = {
     enable = true;
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";

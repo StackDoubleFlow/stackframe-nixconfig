@@ -59,6 +59,7 @@
     shell = pkgs.fish;
     packages = with pkgs; [];
   };
+  programs.fish.enable = true;
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -66,91 +67,23 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # My trusty editor
     vim
-    (google-chrome.override {
-      # GTK4 is needed for fcitx popups to show
-      # There is currently a bug in google-chrome (but not chromium) where we need to manually specify wayland otherwise we get a white screen
-      # commandLineArgs = "--gtk-version=4 --ozone-platform=wayland";
-    })
-    firefox
-    prismlauncher
-    discord
-    vesktop
-    bemenu # wayland dmenu alternative
-    grim # screenshot utility
-    slurp # wayland screen region selector (for screenshots)
-    wl-clipboard
-    playerctl
-    pamixer
-    wob # wayland overlay bar
-    (vscode-with-extensions.override {
-      vscodeExtensions = with vscode-extensions; [
-        rust-lang.rust-analyzer
-        vscodevim.vim
-        serayuzgur.crates
-        tamasfe.even-better-toml
-        llvm-vs-code-extensions.vscode-clangd
-        vadimcn.vscode-lldb
-        rust-lang.rust-analyzer
-        ms-vscode-remote.remote-ssh
-        mkhl.direnv
-        bbenoist.nix
-        eamodio.gitlens
-      ];
-    })
+
+    # Nix Management
+    just
+    nix-output-monitor
+
     usbutils # lsusb
     pciutils # lspci
     fw-ectool
     killall
     file
-    dolphin
-    breeze-icons
     btop
-    spotify
-    baobab
-    pavucontrol
-    gimp
-    osu-lazer-bin
-    python3
-    clang
-    clang-tools
-    llvmPackages_latest.llvm
-    ninja
-    gnumake
-    ghidra
-    postman
-    wireshark
-    audacity
-    exiftool
     wget
-    glfw-wayland
-    xorg.xeyes
-    just
-    libreoffice-qt
-    hunspell # Spell-checker (used by libreoffice)
-    # darling # MacOS Wine-like emulator 
-    nix-output-monitor
-    obsidian
-    magic-vlsi
-    klayout
     hyfetch
-    blender
     unzip
-    jdk17
-    jdk22
     cryfs
-    dotnetCorePackages.sdk_9_0
-    signal-desktop
-    blueberry
-    obs-studio
-    graphviz
-    gephi
-    via
-    quickemu
-    jetbrains.idea-community
-
-    # Dev Libraries
-    wayland
   ];
   fonts.packages = with pkgs; [
     noto-fonts
@@ -236,8 +169,6 @@
     # jack.enable = true;
     # TODO: https://nixos.wiki/wiki/PipeWire#Low-latency_setup
   };
-
-  programs.fish.enable = true;
 
   # Enable binary blobs
   nixpkgs.config.allowUnfree = true;
