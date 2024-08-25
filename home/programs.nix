@@ -5,8 +5,7 @@
   home.packages = with pkgs; [
     (google-chrome.override {
       # GTK4 is needed for fcitx popups to show
-      # There is currently a bug in google-chrome (but not chromium) where we need to manually specify wayland otherwise we get a white screen
-      # commandLineArgs = "--gtk-version=4 --ozone-platform=wayland";
+      commandLineArgs = "--gtk-version=4";
     })
 
     # Games
