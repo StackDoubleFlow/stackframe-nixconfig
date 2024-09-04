@@ -181,7 +181,7 @@
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
   # I don't want it running by default
-  systemd.services.tailscaled.enable = false;
+  systemd.services.tailscaled.wantedBy = lib.mkForce [];
 
   services.flatpak.enable = true;
 
