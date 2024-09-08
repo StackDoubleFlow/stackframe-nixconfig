@@ -4,7 +4,7 @@
   imports = [
     ./ime.nix
     ./programs.nix
-    ./wm.nix
+    ./wm
   ];
 
   # This value determines the home Manager release that your

@@ -64,6 +64,7 @@
     baobab
     pavucontrol # TODO: audio module
     blueberry
+    gparted
 
     libreoffice-qt
     hunspell # Spell-checker (used by libreoffice)

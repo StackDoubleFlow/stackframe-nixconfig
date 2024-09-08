@@ -32,7 +32,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 
-          home-manager.users.stack = import ./home/default.nix;
+          home-manager.users.stack = import ./home;
 
           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
         }

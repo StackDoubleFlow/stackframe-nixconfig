@@ -42,7 +42,7 @@
     platformTheme.name = "adwaita";
     style.name = "adwaita-dark";
     # TODO: Fix qt kde settings
-    # This should fix Dolphin's folder view background,
+    # This should fix Dolphin's folder view background;
     # but it doesn't look like kdeglobals gets generated.
     # I made the file manuaally for now: ~/.config/kdeglobals
     # kde.settings.kdeglobals.Colors.BackgroundNormal = "#2E2E2E";
@@ -150,5 +150,52 @@
         ];
       }
     ];
+  };
+
+  programs.waybar = {
+    enable = true;
+    settings.main = {
+      height = 20;
+      position = "bottom";
+      modules-left = ["sway/workspaces" "sway/mode"];
+      modules-right = ["network" "wireplumber" "battery" "clock" "tray"];
+
+      battery = {
+        format = "{icon}  {capacity}%";
+        format-icons = ["" "" "" "" ""];
+      };
+      clock = {
+        format = "{:%a, %b %d, %I:%M %p}";
+        tooltip-format = "<tt><small>{calendar}</small></tt>";
+        calendar = {
+          mode = "year";
+          mode-mon-col = 3;
+          weeks-pos = "right";
+          on-scroll = 1;
+          format = {
+            months = "<span color='#ffead3'><b>{}</b></span>";
+            days = "<span color='#ecc6d9'><b>{}</b></span>";
+            weeks = "<span color='#99ffdd'><b>W{}</b></span>";
+            weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+            today = "<span color='#ff6699'><b><u>{}</u></b></span>";
+          };
+        };
+      };
+      network = {
+        interface = "wlp1s0";
+        format-wifi = "  {essid}";
+        format-disconnected = "󰖪 No Wifi";
+        tooltip-format-wifi = "{essid} ({signalStrength}%) ";
+        tooltip-format-disconnected = "Disconnected";
+      };
+      wireplumber = {
+        format = "{icon}  {volume}%";
+        format-muted = "";
+        on-click = "helvum";
+        format-icons = ["" "" ""];
+      };
+      tray.spacing = 10;
+    };
+    style = builtins.readFile ./waybar.css;
   };
 }
