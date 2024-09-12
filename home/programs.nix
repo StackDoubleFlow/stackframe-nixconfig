@@ -10,7 +10,7 @@
 
     # Games
     (prismlauncher.override {
-      jdks = [ jdk17 jdk21 ];
+      jdks = [ jdk8 jdk17 jdk21 ];
     })
     osu-lazer-bin
 
