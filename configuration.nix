@@ -187,7 +187,8 @@
 
   programs.adb.enable = true;
 
-  virtualisation.docker.enable = true;
+  # Docker negatively affects boot times
+  # virtualisation.docker.enable = true;
 
   hardware.keyboard.qmk.enable = true;
   services.udev.packages = [ pkgs.via ];
