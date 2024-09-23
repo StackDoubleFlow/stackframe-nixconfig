@@ -20,11 +20,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # For hardware quirks
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { nixpkgs, home-manager, lix-module, nixos-hardware, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, lix-module, nixos-hardware, rust-overlay, ... }@inputs: {
     nixosConfigurations.stackframe = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -44,6 +49,11 @@
 
         lix-module.nixosModules.default
         nixos-hardware.nixosModules.framework-13-7040-amd
+
+        ({ pkgs, ... }: {
+          nixpkgs.overlays = [ rust-overlay.overlays.default ];
+          environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+        })
       ];
     };
   };
