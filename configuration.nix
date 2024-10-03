@@ -79,11 +79,12 @@
     fw-ectool
     killall
     file
-    btop
     wget
     hyfetch
     unzip
     cryfs
+    btop
+    nvtopPackages.amd
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
