@@ -1,5 +1,5 @@
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -45,6 +45,7 @@
     llvmPackages_latest.llvm
     ninja
     gnumake
+    inputs.qpm.outputs.packages."x86_64-linux".default
 
     # Dev Libraries
     glfw-wayland

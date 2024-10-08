@@ -27,6 +27,13 @@
 
     # For hardware quirks
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    # Quest Modding
+    qpm = {
+      url = "github:StackDoubleFlow/QPM.CLI/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.rust-overlay.follows = "rust-overlay";
+    };
   };
 
   outputs = { nixpkgs, home-manager, lix-module, nixos-hardware, rust-overlay, ... }@inputs: {
@@ -45,6 +52,7 @@
           home-manager.users.stack = import ./home;
 
           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+          home-manager.extraSpecialArgs = { inherit inputs; };
         }
 
         lix-module.nixosModules.default
