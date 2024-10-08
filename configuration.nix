@@ -85,6 +85,7 @@
     cryfs
     btop
     nvtopPackages.amd
+    config.boot.kernelPackages.perf
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
