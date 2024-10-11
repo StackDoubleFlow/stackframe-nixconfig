@@ -46,6 +46,7 @@
     ninja
     gnumake
     inputs.qpm.outputs.packages."x86_64-linux".default
+    cargo-flamegraph
 
     # Dev Libraries
     glfw-wayland
