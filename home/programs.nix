@@ -57,7 +57,7 @@
     obs-studio
     audacity
     gimp
-    dolphin
+    nautilus
     obsidian
     gephi
     via # Keyboard config editor

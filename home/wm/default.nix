@@ -39,13 +39,8 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "adwaita";
+    platformTheme = "gnome";
     style.name = "adwaita-dark";
-    # TODO: Fix qt kde settings
-    # This should fix Dolphin's folder view background;
-    # but it doesn't look like kdeglobals gets generated.
-    # I made the file manuaally for now: ~/.config/kdeglobals
-    # kde.settings.kdeglobals.Colors.BackgroundNormal = "#2E2E2E";
   };
 
   home.pointerCursor = {
