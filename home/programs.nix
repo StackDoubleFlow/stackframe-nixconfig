@@ -1,6 +1,12 @@
 
 { config, pkgs, lib, inputs, ... }:
 
+let
+  androidsdk = 
+    (pkgs.androidenv.composeAndroidPackages {
+      includeNDK = true;
+    }).androidsdk;
+in
 {
   home.packages = with pkgs; [
     (google-chrome.override {
@@ -47,8 +53,11 @@
     llvmPackages_latest.llvm
     ninja
     gnumake
+    cmake
     inputs.qpm.outputs.packages."x86_64-linux".default
     cargo-flamegraph
+    powershell
+    androidsdk
 
     # Dev Libraries
     glfw-wayland
@@ -76,6 +85,11 @@
     libreoffice-qt
     hunspell # Spell-checker (used by libreoffice)
   ];
+
+  home.sessionVariables = rec {
+    ANDROID_HOME = "${androidsdk}/libexec/android-sdk";
+    ANDROID_NDK_HOME = "${ANDROID_HOME}/ndk-bundle";
+  };
 
   programs.fish = {
     enable = true;

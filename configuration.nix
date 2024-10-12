@@ -168,6 +168,7 @@
 
   # Enable binary blobs
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.android_sdk.accept_license = true;
   hardware.enableAllFirmware = true;
 
   programs.steam.enable = true;
