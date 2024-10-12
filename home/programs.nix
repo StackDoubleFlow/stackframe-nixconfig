@@ -45,6 +45,7 @@ in
     graphviz
     gephi
     unityhub
+    gitkraken
 
     # Dev tooling
     python3
