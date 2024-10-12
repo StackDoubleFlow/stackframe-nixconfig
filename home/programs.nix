@@ -90,6 +90,9 @@ in
   home.sessionVariables = rec {
     ANDROID_HOME = "${androidsdk}/libexec/android-sdk";
     ANDROID_NDK_HOME = "${ANDROID_HOME}/ndk-bundle";
+    LIBCLANG_PATH = "${pkgs.llvmPackages_latest.libclang.lib}/lib";
+    # To fix: "Couldn't find a valid ICU package installed on the system."
+    DOTNET_SYSTEM_GLOBALIZATION_INVARIANT = "1";
   };
 
   programs.fish = {
