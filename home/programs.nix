@@ -37,6 +37,8 @@
     jetbrains.idea-community
     ghidra
     graphviz
+    gephi
+    unityhub
 
     # Dev tooling
     python3
@@ -53,20 +55,23 @@
     dotnetCorePackages.sdk_9_0
     wayland
 
-    # TODO: Sort through these
-    spotify
-    obs-studio
-    audacity
-    gimp
+    # System Management
     nautilus
-    obsidian
-    gephi
     via # Keyboard config editor
-    quickemu
-    baobab
     pavucontrol # TODO: audio module
     blueberry
     gparted
+    baobab
+
+    # Media Creation
+    audacity
+    gimp
+    obs-studio
+
+    # TODO: Sort through these
+    spotify
+    obsidian
+    quickemu
 
     libreoffice-qt
     hunspell # Spell-checker (used by libreoffice)
