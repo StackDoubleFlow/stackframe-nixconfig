@@ -82,6 +82,8 @@ in
     spotify
     obsidian
     quickemu
+    wine-staging
+    winetricks
 
     libreoffice-qt
     hunspell # Spell-checker (used by libreoffice)
