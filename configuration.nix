@@ -199,37 +199,5 @@
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=10s
   '';
-
-  nixpkgs.overlays = [(final: prev: rec {
-    wlroots = prev.wlroots.overrideAttrs {
-      version = "0.19.0";
-      src = final.fetchFromGitLab {
-        domain = "gitlab.freedesktop.org";
-        owner = "wlroots";
-        repo = "wlroots";
-        rev = "3187479c07c34a4de82c06a316a763a36a0499da";
-        hash = "sha256-YR4AGZS7wtA6hYIWCf3tzDTHHO2W3sxy9IzGpblwGKg=";
-      };
-    };
-    sway-unwrapped = (prev.sway-unwrapped.overrideAttrs (prevAttrs: {
-      version = "1.10.0";
-      src = prev.fetchFromGitHub {
-        owner = "swaywm";
-        repo = "sway";
-        rev = "77b9ddabe2a97c5d04c30929b0f8cbde3470fdd7";
-        hash = "sha256-eHztQ+WODK4rB88pB3fyS54nmV5rixYQvNu+HA3JhvY=";
-      };
-
-      # xwayland option was removed
-      mesonFlags = let
-        inherit (lib.strings) mesonEnable mesonOption;
-        sd-bus-provider =  if prevAttrs.systemdSupport then "libsystemd" else "basu";
-        in [
-          (mesonOption "sd-bus-provider" sd-bus-provider)
-          (mesonEnable "tray" prevAttrs.trayEnabled)
-        ];
-
-    })).override { inherit wlroots; };
-  })];
 }
 
