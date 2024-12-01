@@ -14,6 +14,9 @@ in
       commandLineArgs = "--gtk-version=4";
     })
 
+    okular
+    calibre
+
     # Games
     (prismlauncher.override {
       jdks = [ jdk8 jdk17 jdk21 ];
