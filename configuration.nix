@@ -199,5 +199,21 @@
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=10s
   '';
+
+  nixpkgs.overlays = [(final: prev: {
+    vscode-extensions = prev.vscode-extensions // {
+      vendicated.vencord-companion = final.vscode-utils.buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "vencord-companion";
+          publisher = "Vendicated";
+          version = "0.1.3";
+          hash = "sha256-mFREBkb3A963paHsPhFaYLfIfI6g0X9Gu9RVAtXhAOQ=";
+        };
+        meta = {
+          license = lib.licenses.gpl3;
+        };
+      };
+    };
+  })];
 }
 

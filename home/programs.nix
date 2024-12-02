@@ -41,6 +41,9 @@ in
         mkhl.direnv
         bbenoist.nix
         eamodio.gitlens
+        vendicated.vencord-companion
+        editorconfig.editorconfig
+        dbaeumer.vscode-eslint
       ];
     })
     jetbrains.idea-community
