@@ -55,6 +55,7 @@ in
 
     # Dev tooling
     python3
+    lldb
     clang
     clang-tools
     llvmPackages_latest.llvm
