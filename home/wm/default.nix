@@ -16,7 +16,7 @@
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
-    fira-code-nerdfont
+    nerd-fonts.fira-code
   ];
   fonts.fontconfig.enable = true;
 
