@@ -89,7 +89,7 @@ in
     spotify
     obsidian
     quickemu
-    wine-staging
+    wineWowPackages.waylandFull
     winetricks
 
     libreoffice-qt
