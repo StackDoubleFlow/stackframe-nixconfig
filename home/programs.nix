@@ -46,10 +46,12 @@ in
         dbaeumer.vscode-eslint
       ];
     })
-    jetbrains.idea-community
+    # https://github.com/NixOS/nixpkgs/issues/367486
+    # jetbrains.idea-community
     ghidra
     graphviz
     gephi
+    # Broken until this lands: https://github.com/NixOS/nixpkgs/pull/368851
     unityhub
     gitkraken
 
@@ -88,7 +90,8 @@ in
     # TODO: Sort through these
     spotify
     obsidian
-    quickemu
+    # ceph is broken: https://github.com/NixOS/nixpkgs/issues/359723
+    # quickemu
     wineWowPackages.waylandFull
     winetricks
 
