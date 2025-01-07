@@ -52,7 +52,7 @@ in
     graphviz
     gephi
     # Broken until this lands: https://github.com/NixOS/nixpkgs/pull/368851
-    unityhub
+    # unityhub
     gitkraken
 
     # Dev tooling
