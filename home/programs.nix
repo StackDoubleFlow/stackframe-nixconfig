@@ -155,4 +155,9 @@ in
       core.editor = "vim";
     };
   };
+
+  programs.eclipse = {
+    enable = true;
+    package = pkgs.eclipses.eclipse-java;
+  };
 }
