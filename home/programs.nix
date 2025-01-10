@@ -67,6 +67,7 @@ in
     cargo-flamegraph
     powershell
     androidsdk
+    jdk21
 
     # Dev Libraries
     glfw-wayland
