@@ -46,8 +46,7 @@ in
         dbaeumer.vscode-eslint
       ];
     })
-    # https://github.com/NixOS/nixpkgs/issues/367486
-    # jetbrains.idea-community
+    jetbrains.idea-community
     ghidra
     graphviz
     gephi
