@@ -32,7 +32,7 @@ in
       vscodeExtensions = with vscode-extensions; [
         rust-lang.rust-analyzer
         vscodevim.vim
-        serayuzgur.crates
+        fill-labs.dependi
         tamasfe.even-better-toml
         llvm-vs-code-extensions.vscode-clangd
         vadimcn.vscode-lldb
