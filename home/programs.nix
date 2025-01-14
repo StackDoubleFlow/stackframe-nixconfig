@@ -53,6 +53,8 @@ in
     # Broken until this lands: https://github.com/NixOS/nixpkgs/pull/368851
     # unityhub
     gitkraken
+    renderdoc
+    mangohud
 
     # Dev tooling
     python3
