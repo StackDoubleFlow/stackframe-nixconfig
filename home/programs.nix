@@ -50,8 +50,7 @@ in
     ghidra
     graphviz
     gephi
-    # Broken until this lands: https://github.com/NixOS/nixpkgs/pull/368851
-    # unityhub
+    unityhub
     gitkraken
     renderdoc
     mangohud
@@ -92,8 +91,7 @@ in
     # TODO: Sort through these
     spotify
     obsidian
-    # ceph is broken: https://github.com/NixOS/nixpkgs/issues/359723
-    # quickemu
+    quickemu
     wineWowPackages.waylandFull
     winetricks
 
