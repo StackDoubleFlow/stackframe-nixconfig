@@ -26,6 +26,7 @@ in
     # Social
     vesktop
     signal-desktop
+    element-desktop
 
     # IDEs and other visual dev tools
     (vscode-with-extensions.override {
