@@ -31,13 +31,12 @@ in
     # IDEs and other visual dev tools
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
-        rust-lang.rust-analyzer
+        # rust-lang.rust-analyzer
         vscodevim.vim
         fill-labs.dependi
         tamasfe.even-better-toml
         llvm-vs-code-extensions.vscode-clangd
         vadimcn.vscode-lldb
-        rust-lang.rust-analyzer
         ms-vscode-remote.remote-ssh
         mkhl.direnv
         bbenoist.nix
@@ -95,6 +94,7 @@ in
     quickemu
     wineWowPackages.waylandFull
     winetricks
+    bambu-studio
 
     libreoffice-qt
     hunspell # Spell-checker (used by libreoffice)
