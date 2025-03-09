@@ -14,7 +14,7 @@ in
       commandLineArgs = "--gtk-version=4";
     })
 
-    okular
+    kdePackages.okular
     calibre
 
     # Games
