@@ -31,7 +31,7 @@ in
     # IDEs and other visual dev tools
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
-        # rust-lang.rust-analyzer
+        rust-lang.rust-analyzer
         vscodevim.vim
         fill-labs.dependi
         tamasfe.even-better-toml
@@ -69,6 +69,7 @@ in
     powershell
     androidsdk
     jdk21
+    tmux
 
     # Dev Libraries
     glfw-wayland
@@ -95,6 +96,7 @@ in
     wineWowPackages.waylandFull
     winetricks
     bambu-studio
+    anki-bin
 
     libreoffice-qt
     hunspell # Spell-checker (used by libreoffice)
