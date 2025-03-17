@@ -200,6 +200,18 @@
     DefaultTimeoutStopSec=10s
   '';
 
+  nix.distributedBuilds = true;
+  nix.buildMachines = [{
+    hostName = "luna_nixremote";
+    system = "x86_64-linux";
+    protocol = "ssh-ng";
+    maxJobs = 3;
+    speedFactor = 4;
+    # TODO: Check for more features?
+    supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
+  }];
+  nix.settings.builders-use-substitutes = true;
+
   nixpkgs.overlays = [(final: prev: {
     vscode-extensions = prev.vscode-extensions // {
       vendicated.vencord-companion = final.vscode-utils.buildVscodeMarketplaceExtension {
