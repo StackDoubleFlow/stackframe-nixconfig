@@ -44,6 +44,8 @@ in
         vendicated.vencord-companion
         editorconfig.editorconfig
         dbaeumer.vscode-eslint
+        platformio.platformio-ide
+	      ms-vscode.cpptools # dependency of platformio
       ];
     })
     jetbrains.idea-community
@@ -70,6 +72,7 @@ in
     androidsdk
     jdk21
     tmux
+    platformio
 
     # Dev Libraries
     glfw-wayland
