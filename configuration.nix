@@ -195,6 +195,7 @@
 
   hardware.keyboard.qmk.enable = true;
   services.udev.packages = [ pkgs.via ];
+  hardware.opentabletdriver.enable = true;
 
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=10s
