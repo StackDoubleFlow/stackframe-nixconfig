@@ -103,6 +103,7 @@ in
 
     libreoffice-qt
     hunspell # Spell-checker (used by libreoffice)
+    mpv # Needed by anki for media
   ];
 
   home.sessionVariables = rec {
