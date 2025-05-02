@@ -86,6 +86,7 @@ in
     blueberry
     gparted
     baobab
+    galaxy-buds-client
 
     # Media Creation
     audacity
