@@ -122,9 +122,6 @@ in
         exec sway
       end
     '';
-    shellInit = ''
-      set -gx PATH "$PATH:/home/stack/.local/share/coursier/bin"
-    '';
     plugins = [
       {
         name = "tide";
