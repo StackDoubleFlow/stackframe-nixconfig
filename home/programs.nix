@@ -72,6 +72,7 @@ in
     jdk21
     tmux
     ripgrep
+    mill
 
     # Dev Libraries
     glfw-wayland
