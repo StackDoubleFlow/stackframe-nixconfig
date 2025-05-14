@@ -45,7 +45,7 @@ in
         editorconfig.editorconfig
         dbaeumer.vscode-eslint
         platformio.platformio-ide
-	      ms-vscode.cpptools # dependency of platformio
+        ms-vscode.cpptools # dependency of platformio
       ];
     })
     jetbrains.idea-community
