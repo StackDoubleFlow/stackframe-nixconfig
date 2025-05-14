@@ -73,6 +73,7 @@ in
     jdk21
     tmux
     platformio
+    ripgrep
 
     # Dev Libraries
     glfw-wayland
