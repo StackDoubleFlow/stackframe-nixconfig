@@ -226,17 +226,6 @@
           license = lib.licenses.gpl3;
         };
       };
-      platformio.platformio-ide = final.vscode-utils.buildVscodeMarketplaceExtension {
-        mktplcRef = {
-          name = "platformio-ide";
-          publisher = "PlatformIO";
-          version = "3.3.4";
-          hash = "sha256-QF5jdHKOjlxPaPD5OnzgzaQIWmmENVtsmocedpfkrPw=";
-        };
-        meta = {
-          license = lib.licenses.asl20;
-        };
-      };
     };
   })];
 }
