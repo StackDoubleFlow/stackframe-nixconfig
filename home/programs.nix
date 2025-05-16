@@ -32,7 +32,7 @@ in
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         rust-lang.rust-analyzer
-        vscodevim.vim
+        asvetliakov.vscode-neovim
         fill-labs.dependi
         tamasfe.even-better-toml
         llvm-vs-code-extensions.vscode-clangd
