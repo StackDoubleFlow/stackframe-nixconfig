@@ -66,7 +66,7 @@ in {
     config = rec {
       # Logo key.
       modifier = "Mod4";
-      terminal = "alacritty";
+      terminal = "alacritty msg create-window || alacritty";
       menu = "bemenu-run --binding vim --vim-esc-exits -c -l \"10 down\" -W 0.5";
       output."eDP-1".scale = "1.5";
       defaultWorkspace = "workspace number 1";
