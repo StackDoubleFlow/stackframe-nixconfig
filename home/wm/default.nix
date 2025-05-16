@@ -1,6 +1,9 @@
 { config, pkgs, lib, ... }:
 
-{
+let
+  discordWorkspace = "  Discord";
+  spotifyWorkspace = " Spotify";
+in {
   home.packages = with pkgs; [
     bemenu # wayland dmenu alternative
     grim # screenshot utility
@@ -71,6 +74,10 @@
       bars = [{
         command = "${pkgs.waybar}/bin/waybar";
       }];
+      assigns = {
+        "${discordWorkspace}" = [{ app_id = "vesktop|Element"; }];
+        "${spotifyWorkspace}" = [{ app_id = "spotify"; }];
+      };
       keybindings = lib.mkOptionDefault {
         # Volume control
         "XF86AudioLowerVolume" = "exec pamixer -d 5 && pamixer --get-volume > $SWAYSOCK.wob";
@@ -88,6 +95,9 @@
         "${modifier}+Shift+m" = "exec prismlauncher -l 1.20.4";
         # Screenshots
         "print" = "exec grim -g \"$(slurp)\" - | wl-copy --type image/png";
+        # Application-specific workspaces
+        "${modifier}+Shift+d" = "workspace ${discordWorkspace}";
+        "${modifier}+Shift+f" = "workspace ${spotifyWorkspace}";
       };
       input = {
         "2362:628:PIXA3854:00_093A:0274_Touchpad" = {
