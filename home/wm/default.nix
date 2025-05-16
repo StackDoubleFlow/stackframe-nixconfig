@@ -68,7 +68,6 @@ in {
       modifier = "Mod4";
       terminal = "alacritty";
       menu = "bemenu-run --binding vim --vim-esc-exits -c -l \"10 down\" -W 0.5";
-      window.border = 0;
       output."eDP-1".scale = "1.5";
       defaultWorkspace = "workspace number 1";
       bars = [{
