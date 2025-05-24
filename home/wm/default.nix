@@ -101,6 +101,7 @@ in {
       input = {
         "2362:628:PIXA3854:00_093A:0274_Touchpad" = {
           "click_method" = "clickfinger";
+	        "tap" = "enabled";
         };
         "1133:16465:Logitech_M510" = {
           "accel_profile" =  "flat";
