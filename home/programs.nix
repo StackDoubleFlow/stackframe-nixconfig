@@ -72,6 +72,7 @@ in
     jdk21
     tmux
     ripgrep
+    meson
 
     # Dev Libraries
     glfw-wayland
