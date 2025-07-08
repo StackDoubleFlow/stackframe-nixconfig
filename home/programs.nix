@@ -45,6 +45,7 @@ in
         editorconfig.editorconfig
         dbaeumer.vscode-eslint
         ms-vscode.cpptools # dependency of platformio
+        scalameta.metals # Scala language server
       ];
     })
     jetbrains.idea-community
