@@ -44,7 +44,6 @@ in
         vendicated.vencord-companion
         editorconfig.editorconfig
         dbaeumer.vscode-eslint
-        ms-vscode.cpptools # dependency of platformio
         scalameta.metals # Scala language server
       ];
     })
