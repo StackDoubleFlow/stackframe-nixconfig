@@ -73,6 +73,7 @@ in
     tmux
     ripgrep
     meson
+    ccache
 
     # Dev Libraries
     glfw-wayland
