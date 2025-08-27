@@ -226,6 +226,52 @@
           license = lib.licenses.gpl3;
         };
       };
+
+      # Software 2
+      pdconsec.vscode-print = final.vscode-utils.buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "vscode-print";
+          publisher = "pdconsec";
+          version = "1.6.0";
+          hash = "sha256-Z35K9rwp8lXpIWnCineF1Bsoxy2GwXMgVg/avCS2/h8=";
+        };
+        meta = {
+          license = lib.licenses.gpl3;
+        };
+      };
+      therenegadecoder.bugslang = final.vscode-utils.buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "bugslang";
+          publisher = "TheRenegadeCoder";
+          version = "0.0.1";
+          hash = "sha256-YdTQQdmsVfSbeUaV9DqyDuCw2i0W432ASl6cWIzeRA8=";
+        };
+        meta = {
+          license = lib.licenses.gpl3;
+        };
+      };
+      shengchen.vscode-checkstyle = final.vscode-utils.buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "vscode-checkstyle";
+          publisher = "shengchen";
+          version = "1.4.2";
+          hash = "sha256-IchgQX9CUQ53puLu0ll8zNl6EzSnVDBj7tTUo5NzZjA=";
+        };
+        meta = {
+          license = lib.licenses.gpl3;
+        };
+      };
+      adamraichu.zip-viewer = final.vscode-utils.buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "zip-viewer";
+          publisher = "AdamRaichu";
+          version = "3.18.0";
+          hash = "sha256-N2UDyo2x8mE3eLHLZoN53lrCeYTpg3dTNkpRDVvS/Dk=";
+        };
+        meta = {
+          license = lib.licenses.gpl3;
+        };
+      };
     };
   })];
 }

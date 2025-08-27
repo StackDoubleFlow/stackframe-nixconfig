@@ -45,6 +45,16 @@ in
         editorconfig.editorconfig
         dbaeumer.vscode-eslint
         scalameta.metals # Scala language server
+        
+        # Software 2
+        yzane.markdown-pdf # Markdown to PDF extension
+        vscjava.vscode-java-pack # General Java startup extension pack
+        pdconsec.vscode-print # Code printing to PDF extension
+        therenegadecoder.bugslang # BugsLang syntax highlighting extension
+        shengchen.vscode-checkstyle # Java CheckStyle extension
+        gruntfuggly.todo-tree # todo view extension
+        tomoki1207.pdf # PDF viewer extension
+        adamraichu.zip-viewer # ZIP file creation extension
       ];
     })
     jetbrains.idea-community
