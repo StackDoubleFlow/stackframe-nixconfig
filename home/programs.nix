@@ -55,6 +55,14 @@ in
         gruntfuggly.todo-tree # todo view extension
         tomoki1207.pdf # PDF viewer extension
         adamraichu.zip-viewer # ZIP file creation extension
+        # Java Extension Pack
+        redhat.java
+        vscjava.vscode-java-debug
+        vscjava.vscode-java-test
+        vscjava.vscode-maven
+        vscjava.vscode-gradle
+        vscjava.vscode-java-dependency
+        visualstudioexptteam.vscodeintellicode
       ];
     })
     jetbrains.idea-community
