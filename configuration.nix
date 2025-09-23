@@ -13,11 +13,14 @@
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Use the GRUB EFI boot loader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.efiSupport = true;
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    device = "nodev";
+    useOSProber = true;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/efi";
-  boot.loader.grub.device = "nodev";
   users.users.root.initialHashedPassword = "";
 
   networking.hostName = "stackframe";
