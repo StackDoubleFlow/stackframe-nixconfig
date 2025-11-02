@@ -92,6 +92,7 @@ in
     ripgrep
     meson
     ccache
+    mold-wrapped
 
     # Dev Libraries
     glfw-wayland
