@@ -15,11 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-1.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +31,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, lix-module, nixos-hardware, rust-overlay, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, nixos-hardware, rust-overlay, ... }@inputs: {
     nixosConfigurations.stackframe = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -55,7 +50,6 @@
           home-manager.extraSpecialArgs = { inherit inputs; };
         }
 
-        lix-module.nixosModules.default
         nixos-hardware.nixosModules.framework-13-7040-amd
 
         ({ pkgs, ... }: {

@@ -155,9 +155,9 @@
   services.fprintd.enable = true;
   security.pam.services.login.fprintAuth = true;
   security.pam.services.login.enableGnomeKeyring = true;
-  services.logind.extraConfig = ''
-    HandlePowerKey=suspend
-  '';
+  services.logind.settings.Login = {
+    HandlePowerKey = "suspend";
+  };
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -200,9 +200,9 @@
   services.udev.packages = [ pkgs.via ];
   hardware.opentabletdriver.enable = true;
 
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-  '';
+  systemd.settings.Manager = {
+    DefaultTimeoutStopSec = "10s";
+  };
 
   nix.distributedBuilds = true;
   nix.buildMachines = [{
@@ -276,6 +276,14 @@
         };
       };
     };
+    
+    inherit (prev.lixPackageSets.stable)
+      nixpkgs-review
+      nix-eval-jobs
+      nix-fast-build
+      colmena;
   })];
+
+  nix.package = pkgs.lixPackageSets.stable.lix;
 }
 

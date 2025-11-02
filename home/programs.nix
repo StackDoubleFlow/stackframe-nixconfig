@@ -95,7 +95,7 @@ in
     mold-wrapped
 
     # Dev Libraries
-    glfw-wayland
+    glfw
     dotnetCorePackages.sdk_9_0
     wayland
 

@@ -18,7 +18,7 @@ in {
     # Fonts
     noto-fonts
     noto-fonts-cjk-sans
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     nerd-fonts.fira-code
     corefonts
   ];
