@@ -183,7 +183,7 @@ in
         rc = "rebase --continue";
       };
       pull.ff = "only";
-      core.editor = "vim";
+      core.editor = "nvim";
       init.defaultBranch = "main";
     };
   };
