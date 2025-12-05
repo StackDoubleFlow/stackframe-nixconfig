@@ -100,7 +100,7 @@ in
     wayland
 
     # System Management
-    nautilus
+    nemo
     via # Keyboard config editor
     pavucontrol # TODO: audio module
     blueberry
