@@ -174,12 +174,14 @@ in
   
   programs.git = {
     enable = true;
-    userName = "StackDoubleFlow";
-    userEmail = "ojaslandge@gmail.com";
-    aliases = {
-      rc = "rebase --continue";
-    };
-    extraConfig = {
+    settings = {
+      user = {
+        name = "StackDoubleFlow";
+        email = "ojaslandge@gmail.com";
+      };
+      alias = {
+        rc = "rebase --continue";
+      };
       pull.ff = "only";
       core.editor = "vim";
       init.defaultBranch = "main";
