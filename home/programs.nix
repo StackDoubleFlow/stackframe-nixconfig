@@ -187,9 +187,4 @@ in
       init.defaultBranch = "main";
     };
   };
-
-  programs.eclipse = {
-    enable = true;
-    package = pkgs.eclipses.eclipse-java;
-  };
 }
