@@ -191,8 +191,6 @@
 
   services.flatpak.enable = true;
 
-  programs.adb.enable = true;
-
   # Docker negatively affects boot times
   # virtualisation.docker.enable = true;
 

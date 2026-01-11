@@ -93,6 +93,7 @@ in
     meson
     ccache
     mold-wrapped
+    android-tools
 
     # Dev Libraries
     glfw
