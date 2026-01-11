@@ -65,7 +65,7 @@ in
         visualstudioexptteam.vscodeintellicode
       ];
     })
-    jetbrains.idea-community
+    jetbrains.idea-oss
     ghidra
     graphviz
     gephi
@@ -92,7 +92,7 @@ in
     ripgrep
     meson
     ccache
-    mold-wrapped
+    mold
     android-tools
 
     # Dev Libraries
