@@ -45,7 +45,9 @@ in
         editorconfig.editorconfig
         dbaeumer.vscode-eslint
         scalameta.metals # Scala language server
-        
+        scala-lang.scala
+        vscode-icons-team.vscode-icons
+
         # Software 2
         yzane.markdown-pdf # Markdown to PDF extension
         vscjava.vscode-java-pack # General Java startup extension pack
