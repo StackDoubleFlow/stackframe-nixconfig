@@ -67,7 +67,7 @@ in
         visualstudioexptteam.vscodeintellicode
       ];
     })
-    jetbrains.idea-oss
+    # jetbrains.idea-oss
     ghidra
     graphviz
     gephi
