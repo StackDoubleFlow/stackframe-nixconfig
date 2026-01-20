@@ -124,6 +124,7 @@ in
     winetricks
     bambu-studio
     anki-bin
+    # inputs.openconnect-pulse-launcher.packages."${pkgs.system}".openconnect-pulse-launcher
 
     libreoffice-qt
     hunspell # Spell-checker (used by libreoffice)
