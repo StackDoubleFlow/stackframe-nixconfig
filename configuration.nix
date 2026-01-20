@@ -189,8 +189,6 @@
   # I don't want it running by default
   systemd.services.tailscaled.wantedBy = lib.mkForce [];
 
-  services.flatpak.enable = true;
-
   # Docker negatively affects boot times
   # virtualisation.docker.enable = true;
 
@@ -213,6 +211,13 @@
     supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
   }];
   nix.settings.builders-use-substitutes = true;
+
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "com.bambulab.BambuStudio"
+    ];
+  };
 
   nixpkgs.overlays = [(final: prev: {
     vscode-extensions = prev.vscode-extensions // {

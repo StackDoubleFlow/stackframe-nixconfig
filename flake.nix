@@ -29,9 +29,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.rust-overlay.follows = "rust-overlay";
     };
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
   };
 
-  outputs = { nixpkgs, home-manager, nixos-hardware, rust-overlay, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, nixos-hardware, rust-overlay, nix-flatpak, ... }@inputs: {
     nixosConfigurations.stackframe = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -56,6 +58,8 @@
           nixpkgs.overlays = [ rust-overlay.overlays.default ];
           environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
         })
+
+        nix-flatpak.nixosModules.nix-flatpak
 
         ./ivanti.nix
       ];

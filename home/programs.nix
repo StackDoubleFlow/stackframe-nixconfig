@@ -122,7 +122,6 @@ in
     quickemu
     wineWowPackages.waylandFull
     winetricks
-    bambu-studio
     anki-bin
     # inputs.openconnect-pulse-launcher.packages."${pkgs.system}".openconnect-pulse-launcher
 
