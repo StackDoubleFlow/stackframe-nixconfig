@@ -5,6 +5,9 @@ let
   spotifyWorkspace = " Spotify";
 in {
   home.packages = with pkgs; [
+    # Hyprland stuff
+    hyprlauncher
+
     bemenu # wayland dmenu alternative
     grim # screenshot utility
     slurp # wayland screen region selector (for screenshots)
@@ -207,5 +210,90 @@ in {
       tray.spacing = 10;
     };
     style = builtins.readFile ./waybar.css;
+  };
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+
+    # set the Hyprland and XDPH packages to null to use the ones from the NixOS module
+    package = null;
+    portalPackage = null;
+
+    settings = {
+      "$mainMod" = "SUPER";
+      "$terminal" = "alacritty";
+      "$menu" = "hyprlauncher";
+
+      bind = [
+        "$mainMod, Return, exec, $terminal"
+        "$mainMod, C, killactive"
+        "$mainMod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
+        "$mainMod, E, exec, $fileManager"
+        "$mainMod, Space, togglefloating,"
+        "$mainMod, Q, exec, $menu"
+        "$mainMod, F, fullscreen, 1"
+        "SUPER_SHIFT, F, fullscreen"
+
+        # Move focus with mainMod + arrow keys
+        "$mainMod, left, movefocus, l"
+        "$mainMod, right, movefocus, r"
+        "$mainMod, up, movefocus, u"
+        "$mainMod, down, movefocus, d"
+
+        "$mainMod, S, togglespecialworkspace, spotify"
+        "$mainMod, D, togglespecialworkspace, discord"
+      ] ++ (
+        # workspaces
+        # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
+        builtins.concatLists (builtins.genList (i:
+            let ws = i + 1;
+            in [
+              "$mainMod, code:1${toString i}, workspace, ${toString ws}"
+              "$mainMod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+            ]
+          )
+          9)
+      );
+
+      bindel = [
+        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ",XF86MonBrightnessUp, exec, light -A 5"
+        ",XF86MonBrightnessDown, exec, light -U 5"
+      ];
+
+      # Bar setup
+      exec-once = [
+        "ashell"
+        # "[workspace special:spotify silent] spotify"
+        # "[workspace special:discord silent] vesktop"
+      ];
+
+      windowrule = [
+        "match:class spotify, workspace special:spotify"
+        "match:class vesktop, workspace special:discord"
+      ];
+
+      monitor = "eDP-1, 2256x1504@60.00Hz, 0x0, 1.45";
+      "debug:disable_scale_checks" = "true";
+
+      env = [
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
+      ];
+    };
+  };
+
+  programs.ashell = {
+    enable = true;
+    settings = {
+      position = "Bottom";
+      modules = {
+        "left" = [ "Workspaces" "MediaPlayer" ];
+        "center" = [ "WindowTitle" ];
+        "right" = [ "Tray" [ "Clock" "Privacy" "Settings" ] ];
+      };
+    };
   };
 }

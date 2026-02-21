@@ -219,6 +219,8 @@
     ];
   };
 
+  programs.hyprland.enable = true;
+
   nixpkgs.overlays = [(final: prev: {
     vscode-extensions = prev.vscode-extensions // {
       vendicated.vencord-companion = final.vscode-utils.buildVscodeMarketplaceExtension {
