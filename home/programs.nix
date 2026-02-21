@@ -121,7 +121,7 @@ in
     spotify
     obsidian
     quickemu
-    wineWowPackages.waylandFull
+    wineWow64Packages.waylandFull
     winetricks
     anki-bin
     # inputs.openconnect-pulse-launcher.packages."${pkgs.system}".openconnect-pulse-launcher

@@ -16,7 +16,7 @@ in {
     pamixer
     wob # wayland overlay bar
 
-    xorg.xeyes # Used to check if apps are running in Wayland
+    xeyes # Used to check if apps are running in Wayland
 
     # Fonts
     noto-fonts
