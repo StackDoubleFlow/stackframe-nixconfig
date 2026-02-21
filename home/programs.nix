@@ -75,6 +75,7 @@ in
     gitkraken
     renderdoc
     mangohud
+    quartus-prime-lite
 
     # Dev tooling
     python3
