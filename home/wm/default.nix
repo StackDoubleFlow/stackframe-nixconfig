@@ -282,6 +282,10 @@ in {
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
       ];
+
+      xwayland = {
+        "force_zero_scaling" = true;
+      };
     };
   };
 
