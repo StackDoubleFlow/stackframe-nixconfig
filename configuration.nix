@@ -290,5 +290,13 @@
   })];
 
   nix.package = pkgs.lixPackageSets.stable.lix;
+
+  swapDevices = [ {
+    device = "/var/lib/swapfile";
+    size = 96 * 1024;
+  } ];
+  systemd.sleep.extraConfig = ''
+    HibernateDelaySec=30m
+  '';
 }
 
