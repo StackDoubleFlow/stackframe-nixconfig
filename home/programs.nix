@@ -22,6 +22,7 @@ in
       jdks = [ jdk8 jdk17 jdk21 ];
     })
     osu-lazer-bin
+    protonup-qt
 
     # Social
     vesktop
