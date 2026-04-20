@@ -23,6 +23,7 @@ in
     })
     osu-lazer-bin
     protonup-qt
+    gamescope
 
     # Social
     vesktop
@@ -125,6 +126,7 @@ in
     wineWow64Packages.waylandFull
     winetricks
     anki-bin
+    jellyfin-desktop
     # inputs.openconnect-pulse-launcher.packages."${pkgs.system}".openconnect-pulse-launcher
 
     libreoffice-qt
