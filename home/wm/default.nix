@@ -263,6 +263,11 @@ in {
         ",XF86MonBrightnessDown, exec, light -U 5"
       ];
 
+      bindm = [
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
+      ];
+
       # Bar setup
       exec-once = [
         "ashell"
@@ -275,7 +280,11 @@ in {
         "match:class vesktop, workspace special:discord"
       ];
 
-      monitor = "eDP-1, 2256x1504@60.00Hz, 0x0, 1.45";
+      # monitor = "eDP-1, 2256x1504@60.00Hz, 0x0, 1.45";
+      monitor = [
+        "eDP-1, 2256x1504@60.00Hz, 0x0, 1.5"
+        "DP-3, 1920x1080@60.00Hz, -1920x0, 1"
+      ];
       "debug:disable_scale_checks" = "true";
 
       env = [
