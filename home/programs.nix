@@ -88,7 +88,7 @@ in
     ninja
     gnumake
     cmake
-    inputs.qpm.outputs.packages."x86_64-linux".default
+    # inputs.qpm.outputs.packages."x86_64-linux".default
     cargo-flamegraph
     powershell
     androidsdk
@@ -109,7 +109,7 @@ in
     nemo
     via # Keyboard config editor
     pavucontrol # TODO: audio module
-    blueberry
+    blueman
     gparted
     baobab
     galaxy-buds-client
@@ -178,8 +178,12 @@ in
     };
   };
 
-  programs.neovim.enable = true;
-  
+  programs.neovim = {
+    enable = true;
+    withRuby = false;
+    withPython3 = false;
+  };
+
   programs.git = {
     enable = true;
     settings = {

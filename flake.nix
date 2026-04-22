@@ -24,11 +24,11 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # Quest Modding
-    qpm = {
-      url = "github:StackDoubleFlow/QPM.CLI/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.rust-overlay.follows = "rust-overlay";
-    };
+    # qpm = {
+    #   url = "github:StackDoubleFlow/QPM.CLI/nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.rust-overlay.follows = "rust-overlay";
+    # };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
   };

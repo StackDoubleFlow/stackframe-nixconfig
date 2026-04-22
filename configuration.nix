@@ -148,7 +148,6 @@
   # For gnome configuration
   programs.dconf.enable = true;
 
-  programs.light.enable = true;
   services.upower.enable = true;
   services.fwupd.enable = true;
   services.power-profiles-daemon.enable = true;
@@ -295,8 +294,8 @@
     device = "/var/lib/swapfile";
     size = 96 * 1024;
   } ];
-  systemd.sleep.extraConfig = ''
-    HibernateDelaySec=30m
-  '';
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "30m";
+  };
 }
 

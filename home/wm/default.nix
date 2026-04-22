@@ -12,6 +12,7 @@ in {
     grim # screenshot utility
     slurp # wayland screen region selector (for screenshots)
     wl-clipboard
+    acpilight
     playerctl
     pamixer
     wob # wayland overlay bar
@@ -90,8 +91,8 @@ in {
         "XF86AudioNext" = "exec playerctl next";
         "XF86AudioPrev" = "exec playerctl previous";
         # Brightness control
-        "XF86MonBrightnessUp" = "exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob";
-        "XF86MonBrightnessDown" = "exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob";
+        "XF86MonBrightnessUp" = "exec xbacklight -inc 5 && xbacklight -get | cut -d'.' -f1 > $SWAYSOCK.wob";
+        "XF86MonBrightnessDown" = "exec xbacklight -dec 5 && xbacklight -get | cut -d'.' -f1 > $SWAYSOCK.wob";
         # Application shortcuts
         "XF86AudioMedia" = "exec osu!";
         "${modifier}+Shift+m" = "exec prismlauncher -l 1.20.4";
