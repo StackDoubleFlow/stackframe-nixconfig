@@ -199,5 +199,6 @@ in
       core.editor = "nvim";
       init.defaultBranch = "main";
     };
+    signing.format = "openpgp";
   };
 }
