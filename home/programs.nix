@@ -14,9 +14,6 @@ in
       commandLineArgs = "--gtk-version=4";
     })
 
-    kdePackages.okular
-    calibre
-
     # Games
     (prismlauncher.override {
       jdks = [ jdk8 jdk17 jdk21 ];
@@ -79,7 +76,7 @@ in
     mangohud
     quartus-prime-lite
 
-    # Dev tooling
+    # Dev tooling and libraries
     python3
     lldb
     clang
@@ -100,8 +97,6 @@ in
     ccache
     mold
     android-tools
-
-    # Dev Libraries
     glfw
     dotnetCorePackages.sdk_9_0
     wayland
@@ -120,21 +115,25 @@ in
     audacity
     gimp
     obs-studio
-
-    # TODO: Sort through these
-    spotify
-    obsidian
-    logseq
-    quickemu
-    wineWow64Packages.waylandFull
-    winetricks
-    anki-bin
-    jellyfin-desktop
-    # inputs.openconnect-pulse-launcher.packages."${pkgs.system}".openconnect-pulse-launcher
-
     libreoffice-qt
     hunspell # Spell-checker (used by libreoffice)
-    mpv # Needed by anki for media
+
+    # Notes
+    obsidian
+    logseq
+    syncthing
+    anki-bin
+
+    # Media Playback
+    jellyfin-desktop
+    spotify
+    mpv # Also needed by anki
+    kdePackages.okular
+    calibre
+
+    # Wine
+    wineWow64Packages.waylandFull
+    winetricks
   ];
 
   home.sessionVariables = rec {
