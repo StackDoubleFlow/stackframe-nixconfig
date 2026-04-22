@@ -83,7 +83,8 @@ in
     python3
     lldb
     clang
-    clang-tools
+    # FIXME: clang-tools seems to have a conflicting binary with llvm
+    # clang-tools
     llvmPackages_latest.llvm
     ninja
     gnumake
@@ -112,7 +113,8 @@ in
     blueman
     gparted
     baobab
-    galaxy-buds-client
+    # This was starting a long local build of dotnet
+    # galaxy-buds-client
 
     # Media Creation
     audacity
