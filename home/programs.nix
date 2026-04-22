@@ -122,6 +122,7 @@ in
     # TODO: Sort through these
     spotify
     obsidian
+    logseq
     quickemu
     wineWow64Packages.waylandFull
     winetricks
