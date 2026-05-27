@@ -243,6 +243,8 @@ in {
 
         "$mainMod, S, togglespecialworkspace, spotify"
         "$mainMod, D, togglespecialworkspace, discord"
+
+        ", Print, exec, grim -g \"$(slurp)\" - | wl-copy --type image/png"
       ] ++ (
         # workspaces
         # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
