@@ -36,7 +36,7 @@
   hardware.bluetooth.powerOnBoot = false;
 
   # Set your time zone.
-  time.timeZone = "America/Central";
+  time.timeZone = "US/Central";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
