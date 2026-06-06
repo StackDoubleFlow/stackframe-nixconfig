@@ -166,7 +166,7 @@ in
       }
     ];
     shellAliases = {
-      c = "code . && exit";
+      c = "zeditor . && exit";
       ll = "ls -Alh";
     };
   };
