@@ -2,7 +2,7 @@
 { config, pkgs, lib, inputs, ... }:
 
 let
-  androidsdk = 
+  androidsdk =
     (pkgs.androidenv.composeAndroidPackages {
       includeNDK = true;
     }).androidsdk;
@@ -66,6 +66,7 @@ in
         visualstudioexptteam.vscodeintellicode
       ];
     })
+    zed-editor
     # jetbrains.idea-oss
     ghidra
     graphviz
@@ -100,6 +101,7 @@ in
     glfw
     dotnetCorePackages.sdk_9_0
     wayland
+    nixd
 
     # System Management
     nemo
