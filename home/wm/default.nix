@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  wallpaper = ./../../wallpapers/artemis2.jpg;
+in
 {
   home.packages = with pkgs; [
     # Hyprland stuff
@@ -73,12 +76,12 @@
     enable = true;
     settings = {
       preload = [
-        "~/wallpapers/artemis2.jpg"
+        "${wallpaper}"
       ];
       wallpaper = [
         {
           monitor = "";
-          path = "~/wallpapers/artemis2.jpg";
+          path = "${wallpaper}";
         }
       ];
     };
