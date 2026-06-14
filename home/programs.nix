@@ -11,7 +11,7 @@ in
   home.packages = with pkgs; [
     (google-chrome.override {
       # GTK4 is needed for fcitx popups to show
-      commandLineArgs = "--gtk-version=4";
+      commandLineArgs = "--gtk-version=4 --hide-crash-restore-bubble";
     })
 
     # Games
