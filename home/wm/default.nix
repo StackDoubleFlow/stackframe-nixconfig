@@ -69,6 +69,21 @@
     extraConfig = builtins.readFile ./hyprland.lua;
   };
 
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      preload = [
+        "~/wallpapers/artemis2.jpg"
+      ];
+      wallpaper = [
+        {
+          monitor = "";
+          path = "~/wallpapers/artemis2.jpg";
+        }
+      ];
+    };
+  };
+
   programs.ashell = {
     enable = true;
     settings = {
