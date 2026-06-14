@@ -122,7 +122,7 @@ in
 
     # Notes
     obsidian
-    logseq
+    (logseq.override { electron_39 = electron; })
     syncthing
     anki-bin
 
@@ -166,7 +166,7 @@ in
       }
     ];
     shellAliases = {
-      c = "zeditor . && exit";
+      c = "zeditor . -n && exit";
       ll = "ls -Alh";
     };
   };
