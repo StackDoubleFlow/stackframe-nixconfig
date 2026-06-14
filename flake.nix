@@ -68,6 +68,7 @@
         nix-flatpak.nixosModules.nix-flatpak
 
         ./ivanti.nix
+        ./greeter.nix
       ];
     };
   };

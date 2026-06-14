@@ -127,7 +127,7 @@
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "23.11"; # Did you read the comment?
 
-  # Enable the gnome-keyring secrets vault. 
+  # Enable the gnome-keyring secrets vault.
   # Will be exposed through DBus to programs willing to store secrets.
   services.gnome.gnome-keyring.enable = true;
 
@@ -280,7 +280,7 @@
         };
       };
     };
-    
+
     inherit (prev.lixPackageSets.stable)
       nixpkgs-review
       nix-eval-jobs
@@ -298,4 +298,3 @@
     HibernateDelaySec = "30m";
   };
 }
-
