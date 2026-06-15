@@ -99,7 +99,7 @@ in
     mold
     android-tools
     glfw
-    dotnetCorePackages.sdk_9_0
+    dotnet-sdk_10
     wayland
     nixd
 
@@ -144,6 +144,7 @@ in
     LIBCLANG_PATH = "${pkgs.llvmPackages_latest.libclang.lib}/lib";
     # To fix: "Couldn't find a valid ICU package installed on the system."
     DOTNET_SYSTEM_GLOBALIZATION_INVARIANT = "1";
+    DOTNET_ROOT = "${pkgs.dotnet-sdk_10}/share/dotnet/";
     ANKI_WAYLAND = "1";
   };
 
