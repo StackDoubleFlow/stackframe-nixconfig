@@ -71,7 +71,7 @@ in
     ghidra
     graphviz
     gephi
-    # unityhub
+    unityhub
     gitkraken
     renderdoc
     mangohud
