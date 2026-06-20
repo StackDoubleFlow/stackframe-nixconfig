@@ -102,6 +102,7 @@ in
     dotnet-sdk_10
     wayland
     nixd
+    qemu
 
     # System Management
     nemo
