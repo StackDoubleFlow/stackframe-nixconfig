@@ -156,6 +156,9 @@ in
         exec start-hyprland
       end
     '';
+    interactiveShellInit = ''
+      set -g fish_key_bindings fish_hybrid_key_bindings
+    '';
     plugins = [
       {
         name = "tide";
